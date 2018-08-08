@@ -1,6 +1,7 @@
-#### 2.16.3 [UNPUBLISHED]
+#### 2.17
 1. Sass now hot reloading as expected.
 2. Added demo for auto prefixing.
+3. Now on GitHub
 
 #### 2.16.2
 1. README polish
