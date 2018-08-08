@@ -7,6 +7,10 @@
     "name": "Stephen Drahus",
     "email": "stephen.drahus@joseki-tech.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joseki-tech/generator-paragons.git"
+  },
   "bin": {
     "generator-paragons": "./cli.js"
   },
