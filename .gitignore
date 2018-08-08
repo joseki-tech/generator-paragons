@@ -1,0 +1,5 @@
+.idea
+__tests__
+node_modules
+coverage
+.DS_store

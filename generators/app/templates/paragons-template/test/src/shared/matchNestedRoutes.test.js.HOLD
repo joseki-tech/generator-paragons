@@ -1,0 +1,97 @@
+import matchNestedRoutes from '../../../src/shared/matchNestedRoutes'
+
+/**
+ * Ensure your supertastic matchNestedRoutes function is on the up and up.
+ */
+describe('Match Nester Routes Test Suite', () => {
+
+  // some sample routes
+  const routes = [
+    {
+      path: '/',
+      routes: [
+        {
+          path: '/foo',
+          routes: [
+            {path: '/foo/1'},
+            {path: '/foo/2'},
+            {path: '/foo'},
+          ],
+        },
+        {
+          path: '/bar',
+          routes: [
+            {path: '/bar/1'},
+            {path: '/bar/2'},
+            {path: '/bar/3'},
+            {
+              path: '/bar/a',
+              routes: [
+                {path: '/bar/a/:boo', exact: true},
+              ],
+            },
+            {path: '/bar'},
+          ],
+        },
+      ],
+    },
+  ]
+
+  /**
+   * Reduce the matched nested routes to their associated paths so we can
+   * test the results easier.
+   */
+  const matchedPaths = (reqPath) => {
+    const matchedRoutes = matchNestedRoutes(reqPath, routes)
+    const paths = matchedRoutes.reduce((accumulator, route) => {
+      accumulator.push(route.path)
+      return accumulator
+    }, [])
+    return paths
+  }
+
+  /**
+   * This should only match a single route.
+   */
+  test('root', () => {
+    expect(matchedPaths('/')).toEqual(['/'])
+  })
+
+  /**
+   * This is where we have a route with nested routes and one of them is also
+   * the indexed route.
+   */
+  test('indexed route', () => {
+    expect(matchedPaths('/foo')).toEqual(['/', '/foo', '/foo'])
+  })
+
+  /**
+   * Ensure that a deeply nested route is correctly matched.
+   */
+  test('deeply nested route', () => {
+    expect(matchedPaths('/foo/1')).toEqual(['/', '/foo', '/foo/1', '/foo'])
+  })
+
+  /**
+   * Ensure that a subsequently defined deeply nested route is correctly matched.
+   */
+  test('alternate deeply nested route', () => {
+    expect(matchedPaths('/bar/3')).toEqual(['/', '/bar', '/bar/3', '/bar'])
+  })
+
+  /**
+   * Test to ensure exact is honored.
+   */
+  test('exact route', () => {
+    expect(matchedPaths('/bar/a/test')).
+      toEqual(['/', '/bar', '/bar/a', '/bar/a/:boo'])
+  })
+
+  /**
+   * Test the the no matching route case.
+   */
+  test('exact undefined route', () => {
+    expect(matchedPaths('xxx')).toEqual([])
+  })
+
+})

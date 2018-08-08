@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Stephen Drahus",
+      "authorEmail": "stephen.drahus@joselki-tech.com",
+      "authorUrl": ""
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name": "generator-paragons",
+  "version": "2.16.2",
+  "description": "Yeoman generator for scaffolding paragons",
+  "homepage": "http://joseki-tech.com/",
+  "author": {
+    "name": "Stephen Drahus",
+    "email": "stephen.drahus@joseki-tech.com"
+  },
+  "bin": {
+    "generator-paragons": "./cli.js"
+  },
+  "main": "generators/index.js",
+  "keywords": [
+    "spa",
+    "universal",
+    "isomorphic",
+    "react",
+    "router",
+    "redux",
+    "code splitting",
+    "ssr",
+    "server side render",
+    "sass",
+    "seo",
+    "search engine optimization"
+  ],
+  "devDependencies": {
+    "eslint": "5.2.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-config-xo": "0.23.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "husky": "0.14.3",
+    "jest": "23.4.1",
+    "lint-staged": "7.2.0",
+    "nsp": "3.2.1",
+    "prettier": "1.13.7",
+    "yeoman-assert": "3.1.1",
+    "yeoman-test": "1.8.0",
+    "yo": "2.0.5"
+  },
+  "dependencies": {
+    "chalk": "2.4.1",
+    "lodash": "4.17.10",
+    "yeoman-generator": "3.1.0",
+    "yosay": "2.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublishOnly": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "license": "Apache-2.0"
+}
