@@ -1,4 +1,4 @@
-#### 3.0.1 [UNPUBLISHED] 
+#### 3.0.1  
 1. Added syntax highlighting to demo.
 2. Updating demo for Sass Page.
 
