@@ -1,6 +1,8 @@
 import * as React from 'react'
 import styles from './AutoprefixingPage.scss'
 import PurePage from '../../PurePage'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/styles/hljs';
 
 /**
  * Demonstrates how the CSS animation properties are auto prefixed.
@@ -22,7 +24,7 @@ class AutoPrefixingPage extends PurePage {
         <div className={styles.myDivAnimation}>I transition from red to
           yellow and then pop red.</div>
         <h6>Before:</h6>
-        <pre>{`
+        <SyntaxHighlighter language='css' style={docco}>{`
         .myDivAnimation {
           width: 100px;
           height: 100px;
@@ -31,9 +33,9 @@ class AutoPrefixingPage extends PurePage {
           animation-duration: 4s;
         }
         `}
-        </pre>
+        </SyntaxHighlighter>
         <h6>After:</h6>
-        <pre>{`
+        <SyntaxHighlighter language='css' style={docco}>{`
         ._1FV313lpHmf9pVn4gCxZvJ {
           width: 100px;
           height: 100px;
@@ -44,7 +46,7 @@ class AutoPrefixingPage extends PurePage {
           animation-duration: 4s;
         }
         `}
-      </pre>
+      </SyntaxHighlighter>
       </p>
     </div>
   }

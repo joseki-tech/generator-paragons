@@ -1,3 +1,6 @@
+#### 3.0.1 [UNPUBLISHED] 
+1. Added syntax highlighting to demo.
+
 #### 3.0
 1. Updated npx install command.
 

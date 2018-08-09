@@ -3,7 +3,8 @@ import { storeData } from '../../redux/actions'
 import { connect } from 'react-redux'
 import { Panel } from 'react-bootstrap'
 import PurePage from '../../PurePage'
-
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/styles/hljs';
 /**
  * PreloadDataPage
  * @memberof Demos
@@ -27,7 +28,7 @@ class PreloadDataPage extends PurePage {
           server side via a <b>preloadData</b> on the route in <b>routes.js</b>.
           Refresh the page to validate.</p>
         <Panel>
-          <code>{JSON.stringify(this.props.data, null, 2)}</code>
+          <SyntaxHighlighter language='json' style={docco}>{JSON.stringify(this.props.data, null, 2)}</SyntaxHighlighter>
         </Panel>
       </div>
     )

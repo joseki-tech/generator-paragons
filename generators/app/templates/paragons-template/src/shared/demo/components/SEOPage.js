@@ -3,6 +3,8 @@ import PurePage from '../../PurePage'
 import PageSupport from '../../PageSupport'
 import { Table } from 'react-bootstrap'
 import reactElementToJSXString from 'react-element-to-jsx-string'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/styles/hljs';
 
 /**
  * SEOPage
@@ -18,8 +20,8 @@ class SEOPage extends PurePage {
     pageSupport.addRobotDirectives('nofollow')
   }
 
-  display = component => <pre style={{border: 'none'}}>{reactElementToJSXString(
-    component, {sortProps: false})}</pre>
+  display = component => <SyntaxHighlighter language='html' style={docco}>{reactElementToJSXString(
+    component, {sortProps: false})}</SyntaxHighlighter>
 
   render () {
     const pageSupport = PageSupport.getInstance()
