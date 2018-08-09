@@ -1,5 +1,6 @@
 #### 3.0.1 [UNPUBLISHED] 
 1. Added syntax highlighting to demo.
+2. Updating demo for Sass Page.
 
 #### 3.0
 1. Updated npx install command.
