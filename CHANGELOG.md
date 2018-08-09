@@ -1,3 +1,6 @@
+#### 3.0
+1. Updated npx install command.
+
 #### 2.17
 1. Sass now hot reloading as expected.
 2. Added demo for auto prefixing.

@@ -40,7 +40,7 @@ In development mode modifications are automatically detected and made available 
 server bundle nor the client chunks are not emitted. Source maps are inlined.
 
 ```sh
-npx -p yo generator-paragons my-app
+npx -p yo -p generator-paragons generator-paragons my-app
 cd spa-my-app
 npm start
 ```
