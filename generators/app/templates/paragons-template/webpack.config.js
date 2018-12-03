@@ -23,9 +23,9 @@ let config = [
                         options: {
                             cacheDirectory: true,
                             "presets": [
-                                'react',
+                                '@babel/preset-react',
                                 [
-                                    "env",
+                                    "@babel/preset-env",
                                     {
                                         "targets": {
                                             "browsers": ["last 1 version", "ie >= 11"]
@@ -35,9 +35,9 @@ let config = [
                             ],
                             "plugins": [
                                 'lodash',
-                                'transform-runtime',
-                                "transform-class-properties",
-                                "syntax-dynamic-import",
+                                '@babel/plugin-transform-runtime',
+                                "@babel/plugin-proposal-class-properties",
+                                "@babel/plugin-syntax-dynamic-import",
                                 "react-loadable/babel",
                                 "react-hot-loader/babel"
                             ]
@@ -116,8 +116,8 @@ let config = [
                         options: {
                             cacheDirectory: true,
                             "presets": [
-                                'react',
-                                ["env", {
+                                '@babel/preset-react',
+                                ["@babel/preset-env", {
                                     "targets": {
                                         "node": "current"
                                     }
@@ -127,8 +127,8 @@ let config = [
                             ,
                             "plugins": [
                                 'lodash',
-                                'transform-runtime',
-                                "transform-class-properties",
+                                '@babel/plugin-transform-runtime',
+                                "@babel/plugin-proposal-class-properties",
                                 "dynamic-import-node",
                                 "react-loadable/babel"
                             ]

@@ -1,24 +1,25 @@
-'use strict'
-const Generator = require('yeoman-generator')
-const chalk = require('chalk')
-const yosay = require('yosay')
-const _ = require('lodash')
+'use strict';
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
+const _ = require('lodash');
+const pkg = require('../../package');
 
-const success = chalk.bold.green.bold
+const success = chalk.bold.green.bold;
 
 module.exports = class extends Generator {
-  constructor (args, opts) {
-    super(args, opts)
+  constructor(args, opts) {
+    super(args, opts);
     this.argument('outputDir', {
       type: String,
       required: false,
       default: process.env.PWD
-    })
-    this.argument('appname', {type: String, required: false, default: this.appname})
+    });
+    this.argument('appname', { type: String, required: false, default: this.appname });
   }
 
-  prompting () {
-    this.log(yosay(`Welcome to the ${chalk.blue('Paragons')} generator!`))
+  prompting() {
+    this.log(yosay(`Welcome to the ${chalk.blue('Paragons')} generator!`));
 
     const prompts = [
       {
@@ -39,17 +40,17 @@ module.exports = class extends Generator {
         message: 'Include Demos',
         default: true
       }
-    ]
+    ];
 
     return this.prompt(prompts).then(props => {
-      this.props = props
-      this.props.projectName = _.kebabCase(this.props.projectName)
-      this.spaDir = `spa-${this.props.projectName}`
-      this.fullyQualifiedSPADir = `${this.options.outputDir}/${this.spaDir}`
-    })
+      this.props = props;
+      this.props.projectName = _.kebabCase(this.props.projectName);
+      this.spaDir = `spa-${this.props.projectName}`;
+      this.fullyQualifiedSPADir = `${this.options.outputDir}/${this.spaDir}`;
+    });
   }
 
-  writing () {
+  writing() {
     // Template (excluding problematic binaries)
     this.fs.copyTpl(
       this.templatePath('./paragons-template'),
@@ -57,7 +58,8 @@ module.exports = class extends Generator {
       {
         projectName: this.props.projectName,
         projectDesc: this.props.projectDesc,
-        includeDemo: this.props.includeDemo
+        includeDemo: this.props.includeDemo,
+        generatorVersion: pkg.version
       },
       {},
       {
@@ -66,34 +68,30 @@ module.exports = class extends Generator {
           ignore: ['**/*.{png,gif,jpg}']
         }
       }
-    )
+    );
 
     // Now copy those problematic binaries
     this.fs.copy(
       this.templatePath('./paragons-template/**/*.{png,gif,jpg}'),
       this.destinationPath(this.fullyQualifiedSPADir)
-    )
+    );
   }
 
-  install () {
-    this.log(success('Staged all files'))
-    process.chdir(this.fullyQualifiedSPADir)
-    this.log(success('Executing npm install ...'))
-    this.spawnCommandSync('npm', ['--loglevel=error', 'install'])
-    process.chdir('..')
+  install() {
+    this.log(success('Staged all files'));
+    process.chdir(this.fullyQualifiedSPADir);
+    this.log(success('Executing npm install ...'));
+    this.spawnCommandSync('npm', ['--loglevel=error', 'install']);
+    process.chdir('..');
 
     this.log(
       success(
-`Success! 
+        `Success! 
 
   The app is located at ${this.fullyQualifiedSPADir}
   
-  * Code Coverage:  file://${
-    this.fullyQualifiedSPADir
-    }/coverage/lcov-report/index.html
-  * JSDoc:          file://${
-    this.fullyQualifiedSPADir
-    }/doc/jsdoc/index.html
+  * Code Coverage:  file://${this.fullyQualifiedSPADir}/coverage/lcov-report/index.html
+  * JSDoc:          file://${this.fullyQualifiedSPADir}/doc/jsdoc/index.html
   
   To start up the app:
   
@@ -103,6 +101,6 @@ module.exports = class extends Generator {
   Then open your browser to http://localhost:3000 and enjoy!
 `
       )
-    )
+    );
   }
-}
+};

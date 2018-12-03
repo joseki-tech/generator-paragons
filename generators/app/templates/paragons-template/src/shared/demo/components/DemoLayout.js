@@ -3,6 +3,7 @@ import MenuBar from './MenuBar'
 import SwitchOnChildRoutes from '../../SwitchOnChildRoutes'
 import { Panel } from 'react-bootstrap'
 import PurePage from '../../PurePage'
+import pkg from '../../../../package'
 
 /**
  * DemoLayout
@@ -26,6 +27,10 @@ class DemoLayout extends PurePage {
         }}>
           <SwitchOnChildRoutes {...this.props} />
         </Panel>
+        <div style={{textAlign: 'center'}}>
+          <i>Built by <a
+            href='https://www.npmjs.com/package/generator-paragons'>generator-paragons({pkg.generatorVersion})</a></i>
+        </div>
       </div>
     )
   }

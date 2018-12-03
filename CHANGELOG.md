@@ -1,3 +1,11 @@
+#### 3.1.0
+1. Dependency updates for generator and app. Biggest updates were:
+  a) react 16.4.1 -> 16.6.3
+  b) babel 6 -> 7
+2. Now passing request int preloadData for route in serverRenderer.js in case the handler needs access to request 
+  information such as the path.
+3. generator-paragons version now recorded in package.json of generated app and shown at the bottom of the demo pages.
+
 #### 3.0.1  
 1. Added syntax highlighting to demo.
 2. Updating demo for Sass Page.

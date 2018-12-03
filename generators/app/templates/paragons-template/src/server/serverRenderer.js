@@ -64,7 +64,7 @@ const serverRenderer = function ({clientStats}) {
         return route.preloadData
       }).map(route => {
         console.log(`pre-loading data for path:[${route.path}]`)
-        return store.dispatch(route.preloadData())
+        return store.dispatch(route.preloadData(req))
       })
 
       // all task which need to be completed prior to performing the render
@@ -113,4 +113,4 @@ const serverRenderer = function ({clientStats}) {
 
 }
 
-module.exports = serverRenderer
+export default serverRenderer

@@ -2,8 +2,8 @@
   "env": {
     "test": {
       "presets": [
-        "env",
-        "react"
+        "@babel/preset-env",
+        "@babel/preset-react"
       ]
     }
   }
