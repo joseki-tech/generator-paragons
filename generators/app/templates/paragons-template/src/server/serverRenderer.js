@@ -63,7 +63,8 @@ const serverRenderer = function ({clientStats}) {
         // console.log(route)
         return route.preloadData
       }).map(route => {
-        console.log(`pre-loading data for path:[${route.path}]`)
+        console.log(
+          `pre-loading data for route:[${route.path}](request path:[${req.path}])`)
         return store.dispatch(route.preloadData(req))
       })
 
