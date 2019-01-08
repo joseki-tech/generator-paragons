@@ -99,7 +99,7 @@ const serverRenderer = function ({clientStats}) {
           res.redirect(context.url)
         }
         else {
-          res.send('<!DOCTYPE html>' + html)
+          res.send('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">' + html)
         }
 
       })

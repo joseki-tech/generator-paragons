@@ -1,3 +1,6 @@
+### 4.0.0 (UNRELEASED)
+1. <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> (serverRender.js)
+
 #### 3.1.0
 1. Dependency updates for generator and app. Biggest updates were:
   a) react 16.4.1 -> 16.6.3
