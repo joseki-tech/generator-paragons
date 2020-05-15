@@ -81,7 +81,6 @@
     "redux-devtools-extension": "2.13.7",
     "redux-thunk": "2.3.0",
     "sass-loader": "7.1.0",
-    "save-dev": "2.0.0",
     "style-loader": "0.23.1",
     "typeface-roboto": "0.0.54",
     "window-or-global": "1.0.1"
