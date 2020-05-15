@@ -8,13 +8,15 @@ const root = require('window-or-global')
 const uuidv4 = require('uuid/v4')
 const _ = require('lodash')
 
+// server side configurations
+const CFG = require('./conf/cfg')
+
 const express = require('express')
 const app = express()
 
-
 const cache = require('express-cache-headers')
-app.use(process.env.NODE_ENV === 'development' ? cache({nocache:true}) : cache(365*24*60*60))
-
+app.use(process.env.NODE_ENV === 'development' ? cache({nocache: true}) : cache(
+  365 * 24 * 60 * 60))
 
 app.use(require('body-parser').json())
 app.use(require('cookie-parser')())
@@ -46,9 +48,14 @@ app.use('/*', (req, res, next) => {
 })
 
 // protect map files with basic auth
+// When you open dev tools, you'll notice that the browser tries to download
+// the map files and fails. That is because it cant negotiate the Basic
+// auth we are setting up here. What you need to do is hit one directly at which
+// point you will be presented with and can pass the authentication. Once
+// authenticated, the Dev tools will be able to access the maps!
 const basicAuth = require('express-basic-auth')
 app.use('**/*.map', basicAuth({
-  users: {'support': 'go'},
+  users: {[CFG.mapfiles.user]: `${CFG.mapfiles.password}`},
   challenge: true,
   realm: 'Support Realm',
 }))
