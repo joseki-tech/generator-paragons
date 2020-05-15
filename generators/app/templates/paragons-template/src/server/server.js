@@ -90,7 +90,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // production
 else {
-  const serverRenderer = require('../../dist/server.js')
+  const serverRenderer = require('../../dist/server.js').default
   const clientStats = require('../../dist/client.stats.json')
   app.use(serverRenderer({clientStats}))
 }
