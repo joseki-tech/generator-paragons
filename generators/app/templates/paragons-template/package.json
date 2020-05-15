@@ -64,7 +64,7 @@
     "postcss-import": "12.0.1",
     "prop-types": "15.7.2",
     "query-string": "6.12.1",
-    "react": "16.6.3",
+    "react": "16.13.1",
     <% if(includeDemo) { %>
     "react-bootstrap": "0.32.4",
     <% } %>
@@ -109,7 +109,7 @@
     "mini-css-extract-plugin": "0.9.0",
     "postcss-loader": "3.0.0",
     "react-addons-test-utils": "15.6.2",
-    "react-test-renderer": "16.6.3",
+    "react-test-renderer": "16.13.1",
     "rimraf": "3.0.2",
     "sugarss": "2.0.0",
     "webpack": "4.43.0",
