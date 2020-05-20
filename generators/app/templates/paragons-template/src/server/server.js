@@ -55,6 +55,7 @@ app.use('**/*.map', basicAuth({
   realm: 'Support Realm',
 }))
 
+app.use(express.static('./dist'))
 app.use(express.static('./public'))
 
 // development

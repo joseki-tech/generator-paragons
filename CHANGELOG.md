@@ -1,11 +1,11 @@
 ### 4.0.0 (UNRELEASED)
-1. <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> (serverRender.js)
+1. Added `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">` (serverRender.js)
 2. Freshened dependencies and addressed security warnings. (PAR-1,8)
 3. Added missing uglify webpack plugin. (PAR-10)
 4. Introduced ability to secure routes along with login/out and profile pages. (PAR-5)
-5. Addressed build/production mode breakage. (PAR-3,11)
+5. Addressed build/production mode breakage. (PAR-2,11)
 6. Introduced simple server side config support. (PAR-4)
-7. Webpack output artifacts no longer copied to the public directory. (PAR-3)
+7. Webpack output artifacts no longer copied to the public directory. (PAR-2)
 
 #### 3.1.0
 1. Dependency updates for generator and app. Biggest updates were:

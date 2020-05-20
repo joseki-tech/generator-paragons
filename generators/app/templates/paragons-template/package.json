@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist public/*.js public/*.css public/*.map node_modules/.cache/babel-loader ./doc/jsdoc coverage",
-    "build": "npm run clean && NODE_ENV=production ./node_modules/.bin/webpack && copyfiles -u 1 dist/*.js dist/*.css dist/*.map public",
+    "build": "npm run clean && NODE_ENV=production ./node_modules/.bin/webpack",
     "start-prod": "NODE_ENV=production node ./src/server/server.js",
     "start": "npm run clean && NODE_ENV=development node ./src/server/server.js",
     "test": "rimraf coverage && jest",
