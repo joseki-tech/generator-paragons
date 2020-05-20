@@ -28,6 +28,20 @@ export const updateCount = (count) => {
     }
 }
 
+export const updateAuthenticatedState= (isAuthenticated) => {
+    return {
+        type: Type.AUTHENTICATED_STATE,
+        isAuthenticated: isAuthenticated
+    }
+}
+
+export const storeUserInfo = (userInfo) => {
+    return {
+        type: Type.STORE_USER_INFO,
+        userInfo: userInfo
+    }
+}
+
 export const storeData = (data) => {
     return {
         type: Type.STORE_DATA,

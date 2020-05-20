@@ -204,15 +204,14 @@ class DemoHomePage extends PurePage {
             </Panel>
           </Col>
           <Col xs={6} md={4}>
-            <Panel>
+            <Panel bsStyle="danger">
               <Panel.Heading>
-                <Panel.Title componentClass="h3">Non-existent
-                  Route</Panel.Title>
+                <Panel.Title componentClass="h3">Secured</Panel.Title>
               </Panel.Heading>
               <Panel.Body>
-                Exercises the <b>NoMatch</b> component.
+                Demonstrates a secured route and exercises the login.
                 <p align="right">
-                  <Link to={`${match.url}/non-existent-route`}>
+                  <Link to={`${match.url}/secure`}>
                     <Button bsStyle="primary" variant="outlined">Demo</Button>
                   </Link>
                 </p>

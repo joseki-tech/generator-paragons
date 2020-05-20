@@ -13,14 +13,21 @@ import DemoLayout from './demo/components/DemoLayout'
 import DeferRenderPage from './demo/components/DeferRenderPage'
 import PreloadDataPage, { fetchData as PreloadDataPageFetchData } from './demo/components/PreloadDataPage'
 import HomePage from './HomePage'
+import LoginPage from './LoginPage'
+import LogoutPage from './LogoutPage'
+import ProfilePage from './ProfilePage'
 import ErrorPage from './demo/components/ErrorPage'
 import AutoPrefixingPage from './demo/components/AutoprefixingPage'
+import SecurePage from './demo/components/ProtectedPage'
 
 export const CodeSplitPageLoadable = createLoadable(
   './demo/components/CodeSplitPage')
 
 export default [
   {path: '/', component: HomePage, exact: true},
+  {path: '/login', component: LoginPage},
+  {path: '/logout', component: LogoutPage},
+  {path: '/profile', component: ProfilePage, secure: true},
   {
     path: '/demo', component: SwitchOnChildRoutes,
     routes: [
@@ -34,6 +41,7 @@ export default [
           {path: '/demo/autoprefixing', component: AutoPrefixingPage},
           {path: '/demo/i18n', component: i18nPage},
           {path: '/demo/seo', component: SEOPage},
+          {path: '/demo/secure', component: SecurePage, secure: true},
           {path: '/demo/error', component: ErrorPage},
           {
             path: '/demo/preload',
@@ -60,8 +68,14 @@ export default [
 ]
   <% } else {%>
 import { HomePage } from './HomePage'
+import LoginPage from './LoginPage'
+import LogoutPage from './LogoutPage'
+import ProfilePage from './ProfilePage'
 
 export default [
     {path: '/', component: HomePage, exact: true}
+    {path: '/login', component: LoginPage},
+    {path: '/logout', component: LogoutPage},
+    {path: '/profile', component: ProfilePage, secure: true},
   ]
   <% } %>

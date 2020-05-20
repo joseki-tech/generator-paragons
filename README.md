@@ -27,6 +27,7 @@ in. You will find valuable documentation on all major components.
 * Testing ([Jest](https://jestjs.io/) with [Enzyme](https://github.com/airbnb/enzyme)) and Code Coverage ([Istanbul](https://istanbul.js.org/))
 * Internationalization (**i18n**)
 * **SEO** Support
+* Secure routes
 * Deferred Rendering (aka Above the Fold Rendering)
 * **Demos** Optionally install a collection demonstrations that show and explain the various features. This is an
 excellent way to explore how things work.
@@ -132,6 +133,18 @@ _**Note**: Although it is possible to update the the DOM on the client side; tha
 keywords, etc. once the SPA is in effect, it's useless as the crawlers as they can't navigate the SPA. That being said 
 the title is a special case as it is reflected in the browser and impacts the users experience. Therefore 
 **PageSupport.js** does update it in real time._
+
+## Secure Routes
+
+For some routes/pages the user needs to be authenticated. This can be accomplished by setting `secure="true"` on the 
+route. See the `/profile` route for example usage. When the user attempts to access a secure route, they are redirected 
+to the login page for authentication. After successful authentication, the user is then redirected to the route 
+they were initially trying to access...
+
+_**Note**: The actual authentication implementation in `LoginPage.js.handleLogin` is stubbed for example purposes and 
+will accept any password except "fail" which can be used to test drive a failed login scenario. That being said it 
+does give you a solid starting point to work with including preparation of password hash, seeding profile information 
+in the Redux store, a logout route, and a profile page. 
 
 ## Deferred Rendering (aka Above the Fold Rendering)
 

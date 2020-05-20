@@ -48,11 +48,6 @@ app.use('/*', (req, res, next) => {
 })
 
 // protect map files with basic auth
-// When you open dev tools, you'll notice that the browser tries to download
-// the map files and fails. That is because it cant negotiate the Basic
-// auth we are setting up here. What you need to do is hit one directly at which
-// point you will be presented with and can pass the authentication. Once
-// authenticated, the Dev tools will be able to access the maps!
 const basicAuth = require('express-basic-auth')
 app.use('**/*.map', basicAuth({
   users: {[CFG.mapfiles.user]: `${CFG.mapfiles.password}`},

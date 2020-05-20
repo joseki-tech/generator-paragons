@@ -15,7 +15,7 @@ class AutoPrefixingPage extends PurePage {
 
   render () {
     return <div>
-      <span>
+      <p>
         Demonstrates how the CSS class properties are auto prefixed.
         Specifically in this example(borrowed from <a
         href="https://www.w3schools.com/css/css3_animations.asp">W3Schools CSS
@@ -47,7 +47,7 @@ class AutoPrefixingPage extends PurePage {
         }
         `}
       </SyntaxHighlighter>
-      </span>
+      </p>
     </div>
   }
 
