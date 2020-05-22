@@ -218,6 +218,17 @@ class DemoHomePage extends PurePage {
               </Panel.Body>
             </Panel>
           </Col>
+          <Col xs={6} md={4}>
+            {this.props.authenticated ? <Panel>
+              <Panel.Heading>
+                <Panel.Title componentClass="h3">Authenticated
+                  Content</Panel.Title>
+              </Panel.Heading>
+              <Panel.Body>
+                Demonstrates a how content can be gated by authentication.
+              </Panel.Body>
+            </Panel> : null}
+          </Col>
         </Row>
       </Grid>
     )
