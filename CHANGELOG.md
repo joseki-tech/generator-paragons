@@ -1,4 +1,4 @@
-### 4.0.0 (UNRELEASED)
+### 4.0.0
 1. Added `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">` (serverRender.js)
 2. Freshened dependencies and addressed security warnings. (PAR-1,8)
 3. Added missing uglify webpack plugin. (PAR-10)
