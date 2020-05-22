@@ -204,7 +204,7 @@ class DemoHomePage extends PurePage {
             </Panel>
           </Col>
           <Col xs={6} md={4}>
-            <Panel bsStyle="danger">
+            <Panel bsStyle={this.props.authenticated ? 'success' : 'danger'}>
               <Panel.Heading>
                 <Panel.Title componentClass="h3">Secured</Panel.Title>
               </Panel.Heading>
@@ -228,6 +228,7 @@ class DemoHomePage extends PurePage {
 const mapStateToProps = (state, ownProps) => {
   return {
     sessionId: state.sessionId,
+    authenticated: state.authenticated,
   }
 }
 
