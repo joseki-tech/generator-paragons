@@ -103,7 +103,7 @@ directory structure._
  
 React components can be tested with [Enzyme](https://github.com/airbnb/enzyme)
  
-_**Note**: The `test` env of the root .babelrc ensures the code is transpiled._
+**Note**: The `test` env of the root .babelrc ensures the code is transpiled._
 
 ## Internationalization (i18n)
 
